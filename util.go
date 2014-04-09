@@ -222,7 +222,7 @@ func scanStructIntoMap(obj interface{}) (map[string]interface{}, error) {
 			}
 			mapKey = sqlTags[0]
 		} else {
-			mapKey = fieldName
+			mapKey = snakeCasedName(fieldName)
 		}
 
 		if len(sqlTags) > 1 {
